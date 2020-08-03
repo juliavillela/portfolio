@@ -1,5 +1,6 @@
 ##temporary
 
 images/
-
 ignore/
+
+.DS_Store
