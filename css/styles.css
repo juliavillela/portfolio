@@ -121,7 +121,10 @@ header {
   position: fixed;
   left: 0;
   top:0;
-  padding-top: 12em;
+  padding-top: 22vh;
+  padding-bottom: 5vh;
+  max-height: 100%;
+  overflow: overlay;
   z-index: 2;
   display:none;
 }
