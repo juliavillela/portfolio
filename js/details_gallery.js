@@ -1,12 +1,28 @@
 function select(element) {
     let previous = document.getElementById("selected");
     if (previous) {
-        let prev_children = previous.children;
-        prev_children[0].style.display = "block";
-        previous.id = "unset";
-        previous.open = false;
+        close(previous);
     }
     element.id ="selected";
     let children = element.children;
-    children[0].style.display = "none";
+    let summary = children[0];
+    let text = summary.children[0];
+    let image = summary.children[1];
+    summary.className = "open";
+    text.className = "description";
+    element.scrollIntoView(true);
 }
+
+function close(previous) {
+    let prev_children = previous.children;
+    previous.id = "unset";
+    previous.open = false;
+    let children = previous.children;
+    children[0].className = "square-image-container";
+    children[0].children[0].className = "overlay";
+}
+
+// function align_top(id){
+//     let element = document.getElementById(id);
+//     element.scrollIntoView(true);
+// }

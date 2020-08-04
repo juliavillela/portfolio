@@ -4,6 +4,11 @@ h1, h2, h3 {
     letter-spacing: 0.3em;
 }
 
+h4, h5, h6 {
+    font-weight: 400;
+    color: grey;
+}
+
 a {
   color: black;
   text-decoration: none;
