@@ -21,8 +21,3 @@ function close(previous) {
     children[0].className = "square-image-container";
     children[0].children[0].className = "overlay";
 }
-
-// function align_top(id){
-//     let element = document.getElementById(id);
-//     element.scrollIntoView(true);
-// }

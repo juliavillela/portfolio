@@ -5,14 +5,13 @@
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-items: center;
-    grid-gap: 2em;
+    grid-gap: 5%;
     grid-auto-flow: dense;
 }
     .inner {
     margin-top: 2em;
     padding-top: 2em;
     border: double;
-    border-top-style: double;
     border-left: none;
     border-right: none;
     border-bottom: none;
@@ -69,7 +68,7 @@ summary.open {
     column-count: 2;
     column-width: 300px;
     display: flex;
-    cursor: none;
+    cursor: default;
     outline: none;
 }
 
@@ -81,6 +80,7 @@ summary.open {
     padding-right: 5%;
     padding-left: 5%;
     padding-top: 2%;
+    min-width: 300px;
 }
 
 summary p, summary h6 {
@@ -90,4 +90,20 @@ summary p, summary h6 {
 summary.open p, summary.open h6 {
     display: inline-block;
     text-align: left;
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 45% 45%;
+    } #selected {
+        grid-column-end: 3;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .grid {
+        grid-template-columns: 100%;
+    } #selected {
+        grid-column-end: unset;
+    }
 }
