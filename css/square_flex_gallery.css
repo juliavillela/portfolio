@@ -67,18 +67,13 @@ summary.open {
     width: 100%;
     column-count: 2;
     column-width: 300px;
-    display: flex;
+    column-gap: 2em;
     cursor: default;
     outline: none;
 }
 
 .description  {
-    order: 2;
-    display: grid;
-    text-align: left;
-    width: 50%;
     padding-right: 5%;
-    padding-left: 5%;
     padding-top: 2%;
     min-width: 300px;
 }
@@ -88,7 +83,7 @@ summary p, summary h6 {
 }
 
 summary.open p, summary.open h6 {
-    display: inline-block;
+    display: block;
     text-align: left;
 }
 
