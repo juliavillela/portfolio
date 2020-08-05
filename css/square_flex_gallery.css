@@ -28,7 +28,7 @@ details summary::-webkit-details-marker {
     grid-column-start: 1;
     grid-column-end: 4;
     height: fit-content;
-    padding: 1em;
+    padding: 5%;
     border-style: double;
 }
 
@@ -78,7 +78,7 @@ summary.open {
     min-width: 300px;
 }
 
-summary p, summary h6 {
+summary p, summary h6{
     display: none;
 }
 
@@ -87,7 +87,7 @@ summary.open p, summary.open h6 {
     text-align: left;
 }
 
-@media only screen and (min-width: 770px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
     .grid {
         grid-template-columns: 45% 45%;
     } #selected {
@@ -95,7 +95,7 @@ summary.open p, summary.open h6 {
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
     .grid {
         grid-template-columns: 100%;
     } #selected {

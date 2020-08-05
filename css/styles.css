@@ -63,7 +63,7 @@ header {
 }
 
 .content {
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .two-columns {
