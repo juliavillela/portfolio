@@ -111,6 +111,12 @@ header {
   font-size: 1.5em;
 }
 
+.center-image {
+    display: flex;
+    justify-content: center;
+    padding:20%;
+    padding-top: 0;
+}
 #menu-button {
   position: fixed;
   top: 1em;
