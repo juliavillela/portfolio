@@ -1,6 +1,6 @@
-// var project = document.getElementById("selected");
-// document.getElementById("selected_test");
 var visible_image = 0;
+var image_elements = [];
+var image_count = 0;
 
 function select(element) {
     let this_project = element.parentNode;
@@ -12,6 +12,7 @@ function select(element) {
         close_detail()
     }
     this_project.id = "selected";
+    build_navigation(this_project)
     this_project.scrollIntoView();
 }
 
@@ -21,6 +22,18 @@ function close_detail() {
     project.open = false;
 }
 
+function build_navigation(project){
+    let main = project.children[2];
+    let carroussel = main.children[1];
+    let container = carroussel.children[1];
+    let images = container.children;
+    let sources = [];
+    for (let i = 0 ; i < images.length ; i++) {
+        sources.push(images[i]);
+    }
+    image_elements = sources;
+    image_count = sources.length;
+}
 
 function next() {
     scroll(visible_image + 1);
@@ -32,11 +45,9 @@ function previous() {
 
 function go_to(image) {
     let source = image.src
-    let carroussel = project.children[1]
-    let images = carroussel.children;
     let index = 0;
-    for (let i = 0 ; i < images.length; i++) {
-        if (source === images[i].src) {
+    for (let i = 0 ; i < image_count; i++) {
+        if (source === image_elements[i].src) {
             index = i;
             break;
         }
@@ -45,14 +56,12 @@ function go_to(image) {
 }
 
 function scroll(index) {
-    let carroussel = project.children[1]
-    let images = carroussel.children;
     let next_image = 0;
     if (index < 0) {
-        next_image = images.length + index;
+        next_image = image_count + index;
     } else {
-        next_image = index % images.length;
+        next_image = index % image_count;
     }
-    images[next_image].scrollIntoViewIfNeeded(true);
+    image_elements[next_image].scrollIntoViewIfNeeded(true);
     visible_image = next_image;
 }
