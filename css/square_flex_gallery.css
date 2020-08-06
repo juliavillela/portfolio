@@ -4,17 +4,23 @@
 .grid {
     display: grid;
     grid-template-columns: 30% 30% 30%;
-    justify-items: center;
+    justify-content: center;
     grid-gap: 5%;
     grid-auto-flow: dense;
 }
     .inner {
     margin-top: 2em;
     padding-top: 2em;
-    border: double;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
+    border-top: double;
+    grid-gap: 2%;
+    }
+
+    .inner-flex {
+        margin-top: 2em;
+        padding-top: 2em;
+        border-top: double;
+        display: flex;
+        align-items: center;
     }
 
 details {
@@ -27,17 +33,24 @@ details summary::-webkit-details-marker {
 #selected {
     grid-column-start: 1;
     grid-column-end: 4;
+    max-width: 950px;
+    justify-self: center;
     height: fit-content;
     padding: 5%;
     border-style: double;
 }
 
-.square-image-container {
+.item-container {
     contain: content;
     width: 100%;
     height: 100%;
     max-width: 450px;
 }
+    .carroussel {
+        overflow: scroll;
+        display: inline-flex;
+        scroll-behavior: smooth;
+    }
 
 .overlay {
     position: absolute;
@@ -45,16 +58,38 @@ details summary::-webkit-details-marker {
     width: 100%;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
+    font-weight: 300;
     opacity: 0;
     z-index:2;
     transition: opacity .4s;
 }
 
 .overlay:hover {
-    opacity:100%;
+    opacity:90%;
+}
+.thumbnails {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: double;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    grid-column-gap: 1em;
+}
+
+.thumbnails img {
+    max-width: 150px;
+    max-height: 150px;
+    height: auto;
+    transition: transform .2s;
+}
+
+.thumbnails img:hover{
+    transform: scale(1.06);
 }
 
 img {
@@ -63,13 +98,24 @@ img {
     object-fit: cover;
 }
 
-summary.open {
+/* summary.open {
     width: 100%;
     column-count: 2;
     column-width: 300px;
     column-gap: 2em;
     cursor: default;
     outline: none;
+} */
+
+#selected summary {
+    display: none
+}
+
+.main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2em;
 }
 
 .description  {
@@ -85,6 +131,19 @@ summary p, summary h6{
 summary.open p, summary.open h6 {
     display: block;
     text-align: left;
+}
+nav {
+    display: grid;
+    grid-template-areas: 'previous . next';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+nav i {
+    padding: 1em;
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
