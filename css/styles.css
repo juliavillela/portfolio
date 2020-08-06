@@ -1,6 +1,6 @@
 
 h1, h2, h3 {
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.3em;
 }
 
@@ -82,6 +82,8 @@ header {
   display: block;
   max-width: 550px;
   padding-bottom: 8%;
+  padding:2em;
+  padding-bottom: 6em;
 }
 
 .gallery {
@@ -114,9 +116,8 @@ header {
 .center-image {
     display: flex;
     justify-content: center;
-    padding:20%;
-    padding-top: 0;
 }
+
 #menu-button {
   position: fixed;
   top: 1em;

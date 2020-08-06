@@ -1,0 +1,12 @@
+.btn-light {
+    margin-top: 1em;
+}
+
+.form-control {
+    border: none;
+}
+
+label {
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
