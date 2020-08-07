@@ -1,15 +1,10 @@
-#flex-grid {
-}
-
 .grid {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: center;
     grid-gap: 5%;
     grid-auto-flow: dense;
-}
-
-details {
+    max-width: 1100px;
 }
 
 details summary::-webkit-details-marker {
@@ -96,7 +91,6 @@ img {
 .main {
     width: 100%;
     display: grid;
-    /* grid-template-columns: auto max-content; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2em;
     justify-items: center;
