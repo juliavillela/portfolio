@@ -8,20 +8,6 @@
     grid-gap: 5%;
     grid-auto-flow: dense;
 }
-    .inner {
-    margin-top: 2em;
-    padding-top: 2em;
-    border-top: double;
-    grid-gap: 2%;
-    }
-
-    .inner-flex {
-        margin-top: 2em;
-        padding-top: 2em;
-        border-top: double;
-        display: flex;
-        align-items: center;
-    }
 
 details {
 }
@@ -50,21 +36,25 @@ details summary::-webkit-details-marker {
         overflow: scroll;
         display: inline-flex;
         scroll-behavior: smooth;
+        max-height: 450px;
+    }
+    .carroussel img {
+        object-fit: contain;
     }
 
 .overlay {
     position: absolute;
     height: 100%;
     width: 100%;
+    z-index:2;
     display: flex;
-    justify-content: center;
     text-align: center;
     align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     font-weight: 300;
     opacity: 0;
-    z-index:2;
     transition: opacity .4s;
 }
 
@@ -72,13 +62,14 @@ details summary::-webkit-details-marker {
     opacity:90%;
 }
 .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    grid-column-gap: 1em;
+    justify-items: center;
+    align-items: center;
     margin-top: 2em;
     padding-top: 2em;
     border-top: double;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
-    grid-column-gap: 1em;
 }
 
 .thumbnails img {
@@ -98,15 +89,6 @@ img {
     object-fit: cover;
 }
 
-/* summary.open {
-    width: 100%;
-    column-count: 2;
-    column-width: 300px;
-    column-gap: 2em;
-    cursor: default;
-    outline: none;
-} */
-
 #selected summary {
     display: none
 }
@@ -114,8 +96,10 @@ img {
 .main {
     width: 100%;
     display: grid;
+    /* grid-template-columns: auto max-content; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2em;
+    justify-items: center;
 }
 
 .description  {
@@ -124,14 +108,6 @@ img {
     min-width: 300px;
 }
 
-summary p, summary h6{
-    display: none;
-}
-
-summary.open p, summary.open h6 {
-    display: block;
-    text-align: left;
-}
 nav {
     display: grid;
     grid-template-areas: 'previous . next';
